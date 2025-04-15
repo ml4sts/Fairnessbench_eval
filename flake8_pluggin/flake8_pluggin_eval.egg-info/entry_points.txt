@@ -1,0 +1,2 @@
+[flake8.extension]
+FNA = flake8_pluggin_eval:Fairnessevaluator

@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: flake8_pluggin_eval
+Version: 0.1.0
+Requires-Dist: flake8>=5
+Requires-Dist: importlib-metadata>=0.9; python_version < "3.8"
