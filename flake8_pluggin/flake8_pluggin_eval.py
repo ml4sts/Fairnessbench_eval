@@ -23,7 +23,7 @@ class Fairnessevaluator:
 
         for line, col, msg in self.issues:
             yield line, col, msg, type(self)
-        print(f"Fairness Score: {self.score}/80")
+        print(f"Fairness Score: {self.score}")
     # format on how the error message should look like, it takes as input the line, column and the message   
     def add_issue(self, node, message, deduction=0):
         lineno = getattr(node, 'lineno', 1)
@@ -142,7 +142,7 @@ class Fairnessevaluator:
             )
 
     def check_fairness_metrics(self):
-        mets = ["equalized_odds", "demographic_parity", "statistical_parity", "disparate_impact_ratio", "accuracy","average_abs_odds_difference", "average_odds_difference", "consistency","false_discovery_rate"]
+        mets = ["equalized_odds", "demographic_parity", "statistical_parity", "disparate_impact_ratio", "accuracy","average_abs_odds_difference", "average_odds_difference", "consistency","false_discovery_rate","Equal_opporutnity_differenace","Equalized_odds_difference","Error_rte_difference","Error_rate_ratio","false ommisionate_difference"]
         found = []
         for node in ast.walk(self.tree):
             if isinstance(node, ast.FunctionDef) and node.name in mets:
